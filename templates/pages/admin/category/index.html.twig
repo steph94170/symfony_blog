@@ -1,0 +1,46 @@
+{% extends "themes/base_admin.html.twig" %}
+{% block title %}Liste des caterories {% endblock %}
+
+{% block description %}Liste des caterories{% endblock %}
+
+{% block keywords %}admin, Liste, caterories{% endblock %}
+
+{% block main %}
+    <h1 class="text-center my-3 display-5"> Liste des caterogies</h1>
+
+        <div class="d-flex justify-content-end align-items-center my-3">
+
+            <a href="{{path('admin_category_create')}}" class="btn btn-primary shadow"></a><i class="fa-solid fa-plus"></i>>Nouvelle catégorie</a>
+        </div>
+
+        <div class="table-responsive">
+        <table class="table table-striped table-hover text-center table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Slug</th>
+                    <th>Créé le</th>
+                    <th>Modifié le</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>{{category.id}}</td>
+                    <td>{{category.name}}</td>
+                    <td>{{category.slug}}</td>
+                    <td>{{category.createdAt|format_date()}}</td>
+                    <td>{{category.updeatedAt|format_date()}}</td>
+                    <td>
+                        <a href=""class="btn btn-sm btn-secondary"> Modifier</a>
+                        <a href=""class="btn btn-sm btn-danger"> Supprimer</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+{% endblock %}
