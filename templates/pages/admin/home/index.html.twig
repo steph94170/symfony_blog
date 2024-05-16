@@ -1,0 +1,9 @@
+{% extends 'themes/base_admin.html.twig' %}
+{% block title %}Tableau de bord{% endblock %}
+{% block description %}Tableau de bord{% endblock %}
+{% block keywords %}Tableau-de-bord, admin{% endblock %}
+{% block main %}
+    <h1 class="text-center my-3 display-5">Espace admin</h1>
+
+    <p class="text-center" > hello {{ app.user.FirstName}}</p>
+{% endblock %}
